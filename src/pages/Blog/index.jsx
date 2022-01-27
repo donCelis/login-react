@@ -17,7 +17,7 @@ function Blog () {
         </header>
         <section className='blog-page-wrapper'>
           {dataBlog.map((post, id) => (
-            <Post key={ id }/>
+            <Post key={id} />
           ))}
         </section>
       </section>

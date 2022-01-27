@@ -1,11 +1,9 @@
-import imagePost from '../../assets/oppo-find-n-03.jpg'
-
 function Post () {
   return (
     <article className='single-post row'>
       <aside className='col-4'>
         <figure>
-          <img className='img-fluid' src={imagePost} alt='Texto alternativo' />
+          {/* <img className='img-fluid' src={imagePost} alt='Texto alternativo' /> */}
         </figure>
       </aside>
       <section className='col-8'>
