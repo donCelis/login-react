@@ -13,11 +13,14 @@ function Blog () {
     <main className='blog-page'>
       <section className='container'>
         <header className='blog-page-header my-4'>
-          <h1>Esta es la página del blog</h1>
+          <h1 className='text-center'>Esta es la página del blog</h1>
         </header>
         <section className='blog-page-wrapper'>
           {dataBlog.map((post, id) => (
-            <Post key={id} />
+            <Post
+              key={id}
+              {...post}
+            />
           ))}
         </section>
       </section>
