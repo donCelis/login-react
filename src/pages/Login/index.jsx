@@ -1,9 +1,14 @@
+import { useContext } from 'react'
+import { Allcontext } from '../../context'
+
 const userAdmin = {
   user: 'carlos',
   pass: 'carlos123'
 }
 
-const Login = ({ setState }) => {
+const Login = () => {
+  const { setLogin } = useContext(Allcontext)
+
   const submitForm = (event) => {
     event.preventDefault()
     const { userName, userPass } = event.currentTarget
@@ -12,7 +17,7 @@ const Login = ({ setState }) => {
 
     if (validateForm) {
       // login
-      setState(true)
+      setLogin(true)
     } else {
       // error
       console.log('Datos incorrectos')
