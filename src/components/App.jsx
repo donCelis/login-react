@@ -1,16 +1,15 @@
 import { useContext } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Allcontext } from '../context'
-
-// components
-import { Blog } from '../pages/Blog'
-import Login from '../pages/Login'
+import { Paths } from '../routes'
 
 const App = () => {
-  const { isLogin } = useContext(Allcontext)
+  // const { isLogin } = useContext(Allcontext)
+  // const navigate = useNavigate()
 
   return (
     <>
-      {!isLogin ? <Login /> : <Blog />}
+      <Paths />
     </>
   )
 }
