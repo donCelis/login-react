@@ -8,11 +8,14 @@ import './styles/index.css'
 // context
 import { ContextProvider } from './context'
 import App from './components/App'
+import { BrowserRouter } from 'react-router-dom'
 
 ReactDOM.render(
   <React.StrictMode>
     <ContextProvider>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </ContextProvider>
   </React.StrictMode>,
   document.getElementById('root')

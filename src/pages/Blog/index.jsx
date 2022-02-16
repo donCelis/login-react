@@ -9,12 +9,15 @@ import { dataBlog } from '../../data'
 
 // components
 import { Post } from '../../components/Post'
-import { useNavigate } from 'react-router-dom'
 
 // componente basado en función
 function Blog () {
-  const { setLogin } = useContext(Allcontext)
-  const navigate = useNavigate()
+  const { handleLogin, isLogin } = useContext(Allcontext)
+  console.log(isLogin)
+
+  const logOut = () => {
+    handleLogin(false)
+  }
 
   return (
     <main className='blog-page'>
@@ -22,7 +25,7 @@ function Blog () {
         <header className='blog-page-header my-4'>
           <h1 className='text-center'>Esta es la página del blog</h1>
         </header>
-        <button onClick={() => (setLogin(false), navigate('/'))} className='btn btn-danger mb-3'>Cerrar Sesión</button>
+        <button onClick={() => (logOut())} className='btn btn-danger mb-3'>Cerrar Sesión</button>
         <section className='blog-page-wrapper'>
           {dataBlog.map((post, id) => (
             <Post

@@ -1,14 +1,16 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { Navigate } from 'react-router-dom'
 import { Blog } from '../pages/Blog'
-import Login from '../pages/Login'
+import { Login } from '../pages/Login'
 
-export const Paths = () => {
-  return (
-    <BrowserRouter>
-      <Routes>
-        <Route index path='/' element={<Login />} />
-        <Route path='blog' element={<Blog />} />
-      </Routes>
-    </BrowserRouter>
-  )
-}
+const Paths = (isLoggedIn) => [
+  {
+    path: '/blog',
+    element: isLoggedIn ? <Blog /> : <Navigate to='/' />
+  },
+  {
+    path: '/',
+    element: !isLoggedIn ? <Login /> : <Navigate to='/blog' />
+  }
+]
+
+export { Paths }

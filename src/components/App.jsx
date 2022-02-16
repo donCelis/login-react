@@ -1,15 +1,15 @@
-import { useContext } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { Allcontext } from '../context'
 import { Paths } from '../routes'
+import { useRoutes } from 'react-router-dom'
+import { useContext } from 'react'
+import { Allcontext } from '../context'
 
 const App = () => {
-  // const { isLogin } = useContext(Allcontext)
-  // const navigate = useNavigate()
+  const { isLogin } = useContext(Allcontext)
 
+  const routing = useRoutes(Paths(isLogin))
   return (
     <>
-      <Paths />
+      {routing}
     </>
   )
 }

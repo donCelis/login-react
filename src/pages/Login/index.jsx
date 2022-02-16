@@ -1,6 +1,5 @@
 import { useContext } from 'react'
 import { Allcontext } from '../../context'
-import { useNavigate } from 'react-router-dom'
 
 const userAdmin = {
   user: 'carlos',
@@ -8,9 +7,8 @@ const userAdmin = {
 }
 
 const Login = () => {
-  const { setLogin } = useContext(Allcontext)
-  const navigate = useNavigate()
-
+  const { handleLogin, isLogin } = useContext(Allcontext)
+  console.log(isLogin)
   const submitForm = (event) => {
     event.preventDefault()
     const { userName, userPass } = event.currentTarget
@@ -19,8 +17,7 @@ const Login = () => {
 
     if (validateForm) {
       // login
-      setLogin(true)
-      navigate('/blog')
+      handleLogin(true)
     } else {
       // error
       console.log('Datos incorrectos')
@@ -41,4 +38,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export { Login }
