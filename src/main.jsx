@@ -9,12 +9,10 @@ import './styles/index.css'
 import { ContextProvider } from './context'
 import { BrowserRouter } from 'react-router-dom'
 import App from './components/App'
-import Test from './routes/test'
 
 render(
   <React.StrictMode>
     <ContextProvider>
-      {/*  <Test /> */}
       <BrowserRouter>
         <App />
       </BrowserRouter>
