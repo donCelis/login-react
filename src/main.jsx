@@ -1,5 +1,5 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
 
 // styles
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -7,12 +7,14 @@ import './styles/index.css'
 
 // context
 import { ContextProvider } from './context'
-import App from './components/App'
 import { BrowserRouter } from 'react-router-dom'
+import App from './components/App'
+import Test from './routes/test'
 
-ReactDOM.render(
+render(
   <React.StrictMode>
     <ContextProvider>
+      {/*  <Test /> */}
       <BrowserRouter>
         <App />
       </BrowserRouter>

@@ -1,7 +1,7 @@
-import { Paths } from '../routes'
-import { useRoutes } from 'react-router-dom'
 import { useContext } from 'react'
 import { Allcontext } from '../context'
+import { useRoutes } from 'react-router-dom'
+import { Paths } from '../routes'
 
 const App = () => {
   const { isLogin } = useContext(Allcontext)
