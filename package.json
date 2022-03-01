@@ -1,5 +1,5 @@
 {
-  "name": "vite-app-demo",
+  "name": "login-react",
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",

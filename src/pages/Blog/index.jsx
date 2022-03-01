@@ -9,6 +9,7 @@ import { dataBlog } from '../../data'
 
 // components
 import { Post } from '../../components/Post'
+import { Link } from 'react-router-dom'
 
 // componente basado en función
 function Blog () {
@@ -27,9 +28,9 @@ function Blog () {
         </header>
         <button onClick={() => (logOut())} className='btn btn-danger mb-3'>Cerrar Sesión</button>
         <section className='blog-page-wrapper'>
-          {dataBlog.map((post, id) => (
+          {dataBlog.map((post) => (
             <Post
-              key={id}
+              key={post.id}
               {...post}
             />
           ))}
